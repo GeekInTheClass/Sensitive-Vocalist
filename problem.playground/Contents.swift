@@ -36,8 +36,25 @@ for i in 2...1000 {
     if ( flag == 0 ) { print(i) }
 }
 
+var ans = (3...1000).filter { i in
+    var flag = false;
+    (2...i-1).map { j in
+        if (i % j == 0) {
+            flag = true
+        }
+    }
+    return !flag
+}
+
+print(ans)
+
 let dict: [String: Int] = [ "a": 1, "b": 2 ]
 
 for d in dict{
     print(d)
 }
+
+dict.map { name, price in
+    print("\(name), \(price)")
+}
+
